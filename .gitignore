@@ -39,9 +39,6 @@ lib/generated_plugin_registrant.dart
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
-# Created by https://www.gitignore.io/api/macos
-# Edit at https://www.gitignore.io/?templates=macos
-
 ### macOS ###
 # General
 .DS_Store
@@ -70,11 +67,6 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# End of https://www.gitignore.io/api/macos
-
-# Created by https://www.gitignore.io/api/visualstudiocode
-# Edit at https://www.gitignore.io/?templates=visualstudiocode
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
@@ -85,11 +77,6 @@ Temporary Items
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-
-# End of https://www.gitignore.io/api/visualstudiocode
-
-# Created by https://www.gitignore.io/api/flutter
-# Edit at https://www.gitignore.io/?templates=flutter
 
 ### Flutter ###
 # Flutter/Dart/Pub related
@@ -143,4 +130,6 @@ build/
 !**/ios/**/default.perspectivev3
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
 
-# End of https://www.gitignore.io/api/flutter
+**/android/**/key.properties
+**/android/**/serviceAccount.json
+**/android/**/*.keystore
