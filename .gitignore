@@ -1,3 +1,7 @@
+### User Derfined ignores ###
+super_secret.txt
+
+### Generated ###
 # Miscellaneous
 *.class
 *.log

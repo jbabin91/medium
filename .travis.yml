@@ -1,0 +1,33 @@
+matrix:
+  include:
+    - name: Android Build
+      language: android
+      jdk: openjdk8
+      android:
+        components:
+          - build-tools-28.0.3
+          - android-28
+      before_script:
+        - openssl aes-256-cbc -K $encrypted_3678da613a99_key -iv $encrypted_3678da613a99_iv
+          -in super_secret.txt.enc -out super_secret.txt -d
+        - tar xvf secrets.tar
+        - git clone https://github.com/flutter/flutter.git -b stable
+        - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
+        - gem install bundler && cd android && bundle install && cd ..
+      script:
+        - flutter packages get
+        - flutter test
+        - flutter build apk
+        - cd android && bundle exec fastlane internal
+    - name: iOS Build
+      os: osx
+      language: generic
+      osx_image: xcode11.2
+      before_script:
+        - git clone https://github.com/flutter/flutter.git -b stable
+        - export PATH=`pwd`/flutter/bin:`pwd`/flutter/bin/cache/dart-sdk/bin:$PATH
+        - cd ios && bundle install && cd ..
+      script:
+        - flutter packages get
+        - flutter test
+        - gem install bundler && cd ios && bundle exec fastlane internal
